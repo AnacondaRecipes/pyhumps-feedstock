@@ -39,7 +39,7 @@ about:
   summary: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
   description: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
   dev_url: https://github.com/nficano/humps
-  doc_url: http://humps.readthedocs.io
+  doc_url: https://humps.readthedocs.io
 
 extra:
   anaconda-services:
