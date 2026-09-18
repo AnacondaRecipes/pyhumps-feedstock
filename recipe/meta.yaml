@@ -1,41 +1,49 @@
 {% set name = "pyhumps" %}
-{% set version = "3.7.1" %}
+{% set version = "3.8.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyhumps-{{ version }}.tar.gz
-  sha256: 5616f0afdbc73ef479fa9999f4abdcb336a0232707ff1a0b86e29fc9339e18da
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 498026258f7ee1a8e447c2e28526c0bea9407f9a59c03260aee4bd6c04d681a3
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true  # [py<39]
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
-    - poetry
+    - poetry-core
   run:
-    - python >=3.7
+    - python
+
 
 test:
+  requires:
+    - pip
   imports:
     - humps
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/nficano/humps
-  summary: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python. Inspired by Humps for Node
   license: Unlicense
+  license_family: PUBLIC-DOMAIN
   license_file: LICENSE
+  summary: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
+  description: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
+  dev_url: https://github.com/nficano/humps
+  doc_url: https://humps.readthedocs.io
 
 extra:
+  anaconda-services:
+    ref:
+      - https://anaconda.zendesk.com/agent/tickets/109074
   recipe-maintainers:
-    - simstoykov
+    - anaconda-services

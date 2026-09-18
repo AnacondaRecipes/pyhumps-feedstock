@@ -1,0 +1,10 @@
+anaconda_config_version: 1
+upstream_sources:
+  - pypi:
+      identifier: pyhumps
+      strip_prefix: v
+    packages: [pyhumps]
+  - github:
+      identifier: nficano/humps
+      strip_prefix: v
+    packages: [pyhumps]
