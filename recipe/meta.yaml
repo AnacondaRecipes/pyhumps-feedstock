@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/c4/83/fa6f8fb7accb21f39e8f2b6a18f76f6d90626bdb0a5e5448e5cc9b8ab014/pyhumps-3.8.0.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 498026258f7ee1a8e447c2e28526c0bea9407f9a59c03260aee4bd6c04d681a3
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [py<39]
 
@@ -36,10 +36,10 @@ about:
   license: Unlicense
   license_family: PUBLIC-DOMAIN
   license_file: LICENSE
-  summary: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python. Inspired by Humps for Node
-  description: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python. Inspired by Humps for Node
+  summary: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
+  description: 🐫  Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
   dev_url: https://github.com/nficano/humps
-  doc_url: https://github.com/nficano/humps#readme
+  doc_url: http://humps.readthedocs.io
 
 extra:
   anaconda-services:
