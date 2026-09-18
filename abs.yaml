@@ -1,13 +1,11 @@
-aggregate_check: false
+name: pyhumps
+version: 1
 
-upload_without_merge: true
-
-content_signing: {'win-64': False}
-#mark_private: True
-
-upload_channels:
-  - services
+build:
+  script: conda-build recipe/
 
 channels:
-  - services
-#  - services-build-deps
+  - defaults
+
+upload:
+  channel: services
